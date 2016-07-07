@@ -1,6 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
+console.log("Cars loaded");
 export const Cars = new Mongo.Collection('Cars');
 
 // Deny all client-side updates since we will be using methods to manage this collection
@@ -11,19 +12,14 @@ Cars.deny({
 });
 
 Cars.schema = new SimpleSchema({
-  _id: {
-    type: String,
-    regEx: SimpleSchema.RegEx.Id
-  },
   name: {
-    type: String
+    type: String,
+    label: "Car Name"
   },
   color: {
     type: String,
-    allowedValues: ["red", "green", "blue"]
-  },
-  createdAt: {
-    type: Date
+    allowedValues: ["red", "green", "blue"],
+    label: "Available Colors",
   }
 });
 
@@ -35,7 +31,6 @@ Cars.schema = new SimpleSchema({
 Cars.attachSchema(Cars.schema);
 
 Cars.publicFields = {
-  _id: 1,
   name: 1,
   color: 1
 };

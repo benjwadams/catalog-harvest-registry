@@ -22,3 +22,9 @@ velocity:html-reporter
 velocity:console-reporter
 kadira:flow-router
 kadira:blaze-layout
+twbs:bootstrap
+aldeed:autoform
+less
+aldeed:collection2
+mdg:validated-method
+meteortoys:allthings

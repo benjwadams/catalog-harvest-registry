@@ -1,0 +1,18 @@
+<template name="listCars">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Color</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cars}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{color}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>
