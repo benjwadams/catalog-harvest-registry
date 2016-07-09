@@ -46,16 +46,24 @@ Running the project
 
    Debian:
    ```
-   sudo apt-get install -y postgis curl libpq-dev wget git sqitch
-   curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-   sudo apt-get install -y nodejs
-   wget -q -O- https://s3.amazonaws.com/download.fpcomplete.com/ubuntu/fpco.key | sudo apt-key add -
-   echo 'deb http://download.fpcomplete.com/ubuntu/trusty stable main'|sudo tee /etc/apt/sources.list.d/fpco.list
-   sudo apt-get update && sudo apt-get install stack -y
-   git clone https://github.com/begriffs/postgrest.git
-   cd postgrest
-   stack build --install-ghc
-   sudo stack install --allow-different-user --local-bin-path /usr/local/bin
+   sudo apt-get install -y \
+    postgis \
+    curl \
+    libpq-dev \
+    wget \
+    git \
+    sqitch \
+    tar \
+    xz-utils
+
+   
+    curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    wget http://github.com/begriffs/postgrest/releases/download/v${POSTGREST_VERSION}/postgrest-${POSTGREST_VERSION}-ubuntu.tar.xz && \
+        tar --xz -xvf postgrest-${POSTGREST_VERSION}-ubuntu.tar.xz && \
+        sudo mv postgrest /usr/local/bin/postgrest && \
+        rm postgrest-${POSTGREST_VERSION}-ubuntu.tar.xz
+   
    ```
 
 

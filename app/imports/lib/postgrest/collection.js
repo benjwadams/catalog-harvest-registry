@@ -13,6 +13,7 @@ export class RestCollection {
   register() {
   }
   create(doc, callback) {
+    Meteor.call(this._collectionName + ".create", doc, callback);
   }
   read(docId, callback) {
     Meteor.call(this._collectionName + ".read", docId, callback);
@@ -20,6 +21,7 @@ export class RestCollection {
   update(doc, callback) {
     Meteor.call(this._collectionName + ".update", doc, callback);
   }
-  delete(doc, callback) {
+  remove(docId, callback) {
+    Meteor.call(this._collectionName + ".remove", docId, callback);
   }
 }

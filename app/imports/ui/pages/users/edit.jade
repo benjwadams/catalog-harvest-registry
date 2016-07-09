@@ -1,0 +1,25 @@
+template(name="usersEdit")
+  #users-edit.row
+    .col-sm-12.col-md-offset-2.col-md-6
+      h2 Edit User
+
+      +autoForm schema=formSchema id="editUser" type="normal" doc=user
+        +afQuickField name="email" autofocus=""
+        +afQuickField name="first_name"
+        +afQuickField name="last_name"
+        +afQuickField name="password" type="password"
+        +afQuickField name="passwordConfirmation" type="password"
+        .button-group
+          button(type="submit" class="btn btn-primary") Submit
+          button(type="button" id="delete-user" class="btn btn-danger") Delete
+
+      +if(success)
+        .alert.alert-success
+          | Successfully Submitted
+
+      +if(deleted)
+        .alert.alert-success
+          | User was successfully deleted
+
+
+

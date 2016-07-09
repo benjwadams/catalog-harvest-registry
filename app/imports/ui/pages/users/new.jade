@@ -1,0 +1,10 @@
+template(name="usersNew")
+  #users-new.row
+    .col-sm-12.col-md-offset-2.col-md-6
+      h2 New User
+
+      +quickForm schema=formSchema id="newUser" type="normal" doc=doc
+
+      +if(success)
+        .alert.alert-success
+          Successfully Submitted

@@ -6,6 +6,9 @@ import '/imports/ui/pages/harvests/show.js';
 import '/imports/ui/pages/harvests/edit.js';
 import '/imports/ui/pages/organizations/index.js';
 import '/imports/ui/pages/organizations/edit.js';
+import '/imports/ui/pages/users/index.js';
+import '/imports/ui/pages/users/new.js';
+import '/imports/ui/pages/users/edit.js';
 import '/imports/ui/layouts/app-body.js';
 
 FlowRouter.route('/', {
@@ -54,5 +57,26 @@ FlowRouter.route('/organizations/:organizationId/edit', {
   name: 'Organizations.edit',
   action() {
     BlazeLayout.render('App_body', { main: 'organizationsEdit' });
+  }
+});
+
+FlowRouter.route('/users/new', {
+  name: 'Users.new',
+  action() {
+    BlazeLayout.render('App_body', { main: 'usersNew' });
+  }
+});
+
+FlowRouter.route('/users', {
+  name: 'Users.index',
+  action() {
+    BlazeLayout.render('App_body', { main: 'usersIndex' });
+  }
+});
+
+FlowRouter.route('/users/:userId/edit', {
+  name: 'Users.edit',
+  action() {
+    BlazeLayout.render('App_body', { main: 'usersEdit' });
   }
 });

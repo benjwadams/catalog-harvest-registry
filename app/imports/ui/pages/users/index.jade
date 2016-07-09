@@ -1,0 +1,22 @@
+template(name="usersIndex")
+  #users-index.row
+    .col-sm-12.col-md-8.col-md-offset-2
+      h2 Users 
+        .plus
+          a(href="#" id="new-user")
+            i.fa.fa-plus
+      .table-responsive.organizations-index
+        table.table.table-hover
+          thead
+            tr
+              th.span2 #
+              th.span4 E-mail
+              th.span6 Name
+          tbody
+            +each users
+              tr
+                td= id
+                td= email
+                td #{last_name}, #{first_name}
+
+
