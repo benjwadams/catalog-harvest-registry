@@ -79,7 +79,9 @@ export const registerAccount = new ValidatedMethod({
       profile: {
         name: user.name,
         email: user.email,
-        organization: user.organization
+        organization: user.organization,
+        poc_name: user.poc_name,
+        poc_email: user.poc_email
       }
     };
     Accounts.createUser(insertDoc);  
